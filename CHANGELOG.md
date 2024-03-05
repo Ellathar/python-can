@@ -1,3 +1,14 @@
+Version 4.3.2 
+=============
+
+This is a fork of the main repo python-can
+
+Bug Fixes
+----------------
+Introduced fixes decoding asc files with full text arbitration_id as Vector CAN Analyzer can generate them
+when the option "Represention - Symbolic" is chosen in Export and Logging Settings - ASCII Settings
+More changes and regex may be needed but early tests are good.
+
 Version 4.3.1
 =============
 
