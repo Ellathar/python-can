@@ -156,12 +156,12 @@ class ASCReader(TextIOMessageReader):
         if str_can_id[0:2].upper() == "ID":
             msg_kwargs["is_extended_id"] = False
             can_id = int(str_can_id[2:5], self._converted_base)
-        elif str_can_id[-1:].lower() == "x":
-            msg_kwargs["is_extended_id"] = True
-            can_id = int(str_can_id[0:-1], self._converted_base)
         elif re.match('^[a-fA-F0-9]+$',str_can_id) == None:
             msg_kwargs["is_extended_id"] = False
             can_id = int(str_can_id[-3:], self._converted_base)
+        elif str_can_id[-1:].lower() == "x":
+            msg_kwargs["is_extended_id"] = True
+            can_id = int(str_can_id[0:-1], self._converted_base)
         else:
             msg_kwargs["is_extended_id"] = False
             can_id = int(str_can_id, self._converted_base)
